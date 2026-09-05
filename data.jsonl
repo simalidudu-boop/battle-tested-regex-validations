@@ -1,0 +1,30 @@
+{"input": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", "label": "email", "note": "Standard email validation covering local, domain, and TLD per RFC 5322 simplified"}
+{"input": "^(https?://)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#?&/=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)$", "label": "url", "note": "Validates HTTP/HTTPS URLs with optional scheme and www prefix"}
+{"input": "^\\+?[1-9]\\d{1,14}$", "label": "phone-e164", "note": "E.164 international phone format: optional plus, 1-15 digits, no leading zero"}
+{"input": "^\\(?(\\d{3})\\)?[-.\\s]?(\\d{3})[-.\\s]?(\\d{4})$", "label": "phone-us", "note": "US phone number with optional area code parentheses and flexible separators"}
+{"input": "^(?:4[0-9]{15}(?:[0-9]{3})?|5[1-5][0-9]{14}|(?:222[1-5]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\\d{3})\\d{11})$", "label": "credit-card", "note": "Validates Visa, Mastercard, Amex, Discover, and JCB card numbers by prefix and length"}
+{"input": "^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])$", "label": "ipv4", "note": "IPv4 address where each octet is 0-255"}
+{"input": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", "label": "uuid", "note": "Standard UUID v1-v5 format in lowercase hex with hyphens"}
+{"input": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "label": "slug", "note": "URL-safe slug: lowercase alphanumerics separated by single hyphens, no leading/trailing hyphen"}
+{"input": "^(0[1-9]|[12]\\d|3[01])[-/.](0[1-9]|1[0-2])[-/.](19|20)\\d{2}$", "label": "date-dd-mm-yyyy", "note": "Day-month-year date with separators, month 01-12, day 01-31, year 1900-2099"}
+{"input": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$", "label": "password", "note": "Password requiring at least one lowercase, one uppercase, one digit, one special char, min 8 chars"}
+{"input": "^(?:978|979)[0-9]{10}(?:[0-9Xx])$", "label": "isbn-13", "note": "ISBN-13 with prefix 978/979, 10 digits, and check digit 0-9 or X"}
+{"input": "^(?:\\d{5}(?:-\\d{4})?)$", "label": "postal-us", "note": "US ZIP code (5 digits) or ZIP+4 (5-4 digits with hyphen)"}
+{"input": "^(?!000|666|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$", "label": "ssn", "note": "US SSN excluding invalid area/group/serial numbers like 000, 666, 9xx, 00 group, 0000 serial"}
+{"input": "^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$", "label": "mac-address", "note": "MAC address in colon-separated hex pairs (6 groups of 2)"}
+{"input": "^([0-9a-f]{1,4}:){7}[0-9a-f]{1,4}$", "label": "ipv6-full", "note": "Full IPv6 address with 8 groups of 1-4 hex digits separated by colons"}
+{"input": "^[A-Za-z0-9_-]{20,256}\\.[A-Za-z0-9_-]{20,256}\\.[A-Za-z0-9_-]{20,256}$", "label": "jwt", "note": "JSON Web Token structure: three base64url segments separated by dots"}
+{"input": "^\\d+\\.\\d+\\.\\d+(?:-([a-zA-Z\\-]+(?:\\.[0-9a-zA-Z\\-]+)*))?(?:\\+([0-9a-zA-Z\\-]+(?:\\.[0-9a-zA-Z\\-]+)*))?$", "label": "semver", "note": "Semantic versioning: major.minor.patch with optional prerelease and build metadata"}
+{"input": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$", "label": "hex-color", "note": "CSS hex color code: 3 or 6 hex digits prefixed with #"}
+{"input": "^[A-Za-z0-9+/]+={0,2}$", "label": "base64", "note": "Base64 encoded string with optional padding of 0-2 equals signs"}
+{"input": "^(?=.{1,253}$)([a-zA-Z0-9](?:[a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]{2,63}$", "label": "hostname", "note": "DNS hostname: labels of 1-63 chars, total up to 253, TLD 2-63 letters"}
+{"input": "^/api/v\\d+(/[a-z0-9_\\-]+)+$", "label": "api-endpoint", "note": "REST API endpoint path starting with /api/v<version> followed by lowercase path segments"}
+{"input": "^[A-Za-z0-9]{16,64}$", "label": "api-key", "note": "API key: 16-64 alphanumeric characters, no special chars or spaces"}
+{"input": "^\\d{2}-\\d{7}$", "label": "tax-id-in", "note": "Indian PAN/Tax ID format: 2 digits, hyphen, 7 digits"}
+{"input": "^[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{4}$", "label": "bank-account", "note": "16-digit bank account number with optional spaces every 4 digits"}
+{"input": "^(?:[a-zA-Z]{2}:)?[0-9]{5,12}$", "label": "routing-number", "note": "US ABA routing number: optional 2-letter prefix, 5-12 digits"}
+{"input": "^(?:3[47]\\d{13}|6(?:011|5\\d{2})\\d{12}|(?:4\\d{15}|5[1-5]\\d{14}|2(?:2[2-9][1-9]|2[3-9]\\d{2}|[3-6]\\d{3}|7[01]\\d{2}|720)\\d{11}|3(?:0[0-5]|[68]\\d)\\d{11}|35\\d{14})$", "label": "credit-card-strict", "note": "Strict credit card validation by brand prefix and exact length, no spaces or dashes allowed"}
+{"input": "^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(\\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*$", "label": "domain-label", "note": "Single domain label or full domain: lowercase alphanumeric and hyphens, max 63 chars per label"}
+{"input": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$", "label": "iso8601-datetime", "note": "ISO 8601 datetime with optional fractional seconds and timezone offset or Z"}
+{"input": "^(?:[A-Z][a-z]{2,9})\\s\\d{1,5}$", "label": "postcode-uk", "note": "UK postcode: 2-3 letter outward code, space, 1-5 digit inward code"}
+{"input": "^[0-9]{5}-[0-9]{4}$", "label": "postal-canada", "note": "Canadian postal code: 5 digits, hyphen, 4 digits"}
